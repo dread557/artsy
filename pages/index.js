@@ -115,7 +115,7 @@ export default function Home() {
       </section>
       <AuctionSlider />
       <div>
-        <div className='mt-[190px] border-b h-[.5px] bg-[#333333] '></div>
+        <div className='mt-[100px] md:mt-[190px] border-b h-[.5px] bg-[#333333] '></div>
         <span className='flex items-center justify-between pt-[59px] pb-[59px] pl-[8px] pr-[30px] md:pl-[65px] md:pr-[65px] lg:pl-[120px] lg:pr-[120px]'>
           <h1 className='font-satoshi font-medium text-[#333] text-2xl md:text-5xl'>Explore marketplace</h1>
           <Link href='#'>
@@ -154,18 +154,22 @@ export default function Home() {
           </p>
         </div>
         <VerticalSlider />
+        <span className='absolute z-20 right-[4%] top-[48%] flex flex-col items-end'>
+          <p className='text-[32px] lg:text-[85px] font-bold font-clash'>Circa</p>
+          <p className='text-[64px] lg:text-[170px] lg:leading-[264.35px] font-bold font-clash line-through'>1985</p>
+        </span>
       </section>
-      <section className='mt-[66px] md:mt-[147px] flex flex-col lg:items-center lg:border border-[#333333] pl-[30px] pb-[62px] pr-[30px] md:ml-[65px] md:mr-[65px]'>
+      <section className='mt-[66px] md:mt-[147px] flex flex-col lg:items-center lg:border border-[#333333] pl-[30px] pb-[29.15px] md:pb-[62px] pr-[30px] md:ml-[65px] md:mr-[65px]'>
         <h2 className='font-basker text-2xl md:text-[30.21px] pt-6 leading-[39.06px]'>NewsLetter</h2>
         <p className='text-[11.64px] md:text-[32px]'>Subscribe to get daily updates on new drops & exciting deals </p>
         <form className='flex flex-col md:flex-row gap-[23px] mt-[25px] mb-[25px] md:mt-9 md:mb-9'>
           <input
-            className='font-basker border border-[#333] h-[60px] text-center w-[300px] sm:w-[340px] md:w-[446px]'
+            className='font-basker border border-[#333] h-[46px] md:h-[60px] pl-4 md:pl-[50px] w-[300px] sm:w-[340px] md:w-[446px]'
             type='email'
             placeholder='Enter your Email'
 
           />
-          <button className='font-basker uppercase border bg-[#333] text-white h-[60px] text-center w-[181.63px]'>Subscribe</button>
+          <button className='font-basker uppercase border bg-[#333] text-white h-[53.64px] md:h-[60px] text-center w-[181.63px]'>Subscribe</button>
         </form>
       </section>
     </>
