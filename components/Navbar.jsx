@@ -14,7 +14,7 @@ const Navbar = () => {
         { name: 'Drop', link: '/drop' }
     ]
     return (
-        <div className='flex md:gap-4 lg:gap-[47px] font-satoshi'>
+        <div className='hidden lg:flex md:gap-4 lg:gap-[47px] font-satoshi'>
             {links.map((link, index) => {
                 const isActive = router.asPath === link.link;
                 return (

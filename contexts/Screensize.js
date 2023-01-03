@@ -16,7 +16,7 @@ const ScreensizeProvider = (props) => {
 
     }, [])
     useEffect(() => {
-        if (screenSize >= 800) {
+        if (screenSize >= 968) {
             setActiveMenu(true)
             setMobileMenu(true)
         } else {
