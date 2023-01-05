@@ -10,6 +10,10 @@ h2, h3, h4,h5, p {
     color: #333;
 }
 
+input:checked + div svg {  
+  @apply block;  
+}
+
 
 @font-face {
     font-family : 'Satoshi';

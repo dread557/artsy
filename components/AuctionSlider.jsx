@@ -32,7 +32,11 @@ const AuctionSlider = () => {
                 </span>
             </div>
             <div className='flex justify-between items-center pb-[26px]'>
-                <div>loading</div>
+                <div className='bg-[#AEAEAE] w-[295.69px] h-[10px] rounded-[50px]'>
+                    <div className='bg-white w-[15%] h-full  rounded-[50px]'>
+
+                    </div>
+                </div>
                 <div className='flex items-center gap-[19px] mt-[21px]'>
                     <div className='w-[69.71px] cursor-pointer h-[69.71px] rounded-full bg-transparent relative shadow-lg'>
                         <MdKeyboardArrowLeft className='absolute  text-white top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[18.65px] h-[18.65px]' />

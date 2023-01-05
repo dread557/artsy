@@ -20,7 +20,7 @@ const Header = () => {
             <div className='flex gap-[11px]'>
                 <BiSearch className='w-[28px] h-[28px] text-[#333333] cursor-pointer' />
                 <BsCart3 className='w-[28px] h-[28px] text-[#333333] cursor-pointer' />
-                {screenSize >= 968 ? (<IoMdNotificationsOutline className='w-[28px] h-[28px] text-[#333333]' cursor-pointer />) : null}
+                {screenSize >= 968 ? (<IoMdNotificationsOutline className='w-[28px] h-[28px] text-[#333333] cursor-pointer' />) : null}
             </div>
 
         </div>

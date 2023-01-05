@@ -7,7 +7,7 @@ import { ScreenContext } from '../contexts/Screensize'
 const Navbar = () => {
     const { setActiveMenu, activeMenu, setMobileMenu, mobileMenu } = useContext(ScreenContext)
     return (
-        <div className='flex flex-col bg-white w-full h-full absolute top-0 left-0 right-0 p-[30px] pt-8'>
+        <div className='flex flex-col bg-white w-full h-full absolute z-30 top-0 left-0 right-0 p-[30px] pt-8'>
             <div className=' flex justify-between mb-12'>
                 <Link className='font-bold text-[24px]' href='/' onClick={() => { setActiveMenu(!activeMenu); setMobileMenu(!mobileMenu) }}>ARTSY.</Link>
                 <span className='text-2xl cursor-pointer' onClick={() => { setMobileMenu(!mobileMenu); setActiveMenu(false) }}><AiOutlineClose /></span>
