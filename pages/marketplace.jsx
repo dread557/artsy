@@ -106,6 +106,13 @@ const Marketplace = () => {
                                 <p className='text-2xl leading-[32.4px] mb-5' key={index}>{artist}</p>
                             ))}
                         </div>)}
+                        <span
+                            className='flex items-center justify-between mt-14 mb-8'
+                        // onClick={() => setArtist(!artist)}
+                        >
+                            <h3 className='text-[28px] font-medium leading-[44.13px]'> Collection year</h3>
+                            <RiArrowDropUpLine className={artist ? 'w-[36px] h-[29px] mt-2 ease-out duration-300 ' : 'transform rotate-180 ease-out duration-300 w-[36px] h-[29px] mt-2'} />
+                        </span>
                     </div>
                 </div>
                 <div className='grid relative grid-cols-1 pb-36 md:grid-cols-2 xl:grid-cols-3 gap-y-[42px] gap-x-[53px] justify-items-end w-full lg:w-[75%]'>
