@@ -1,21 +1,43 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { RiArrowDropDownLine, RiArrowDropUpLine } from 'react-icons/ri'
 import { BsArrowRight } from 'react-icons/bs'
 import search from '/public/search.svg'
 import fil from '/public/fil.svg'
 import Image from 'next/image'
 import Link from 'next/link'
-import { artists, categories, products } from '../data/products'
+import { artists, categories, products } from '../../data/products'
 
 const Marketplace = () => {
     const [searchTerm, setSearchTerm] = useState('')
     const [category, setCategory] = useState(true)
     const [price, setPrice] = useState(true)
     const [artist, setArtist] = useState(true)
+
+
+    // const [selectedValues, setSelectedValues] = useState([])
+
     const submit = (e) => {
 
         setSearchTerm()
     }
+
+    // const checkSubmit = (e) => {
+    //     e.preventDefault()
+    //     const formData = new FormData(e.target)
+    //     const values = []
+    //     for (const [key, value] of formData.entries()) {
+    //         values.push(value)
+    //     }
+    //     setSelectedValues(values)
+    // }
+
+    // const handleChange = () => {
+    //     // const form = document.querySelector('form')
+    //     checkForm.current.dispatchEvent(new Event('submit', { cancelable: true }))
+    // }
+
+    // const filteredData = products.filter(product => selectedValues.includes(product.category))
+
     return (
         <div className='pl-[30px] mt-8 md:mt-20 pr-[30px] md:pl-[65px] md:pr-[65px] lg:pl-[120px] lg:pr-[120px]'>
             <span className='flex items-center md:hidden text-[#BCB7B7] font-medium text-lg mb-4'>
@@ -65,8 +87,14 @@ const Marketplace = () => {
                             <div className='flex flex-col gap-5 mt-8'>
                                 {categories.map((category, index) => {
                                     return (
-                                        <div className='flex' key={index}>
-                                            <input type='checkbox' name={category} value={category} className='opacity-0 absolute w-[26px] h-[26px]' />
+                                        <form className='flex' key={index}>
+                                            <input
+                                                type='checkbox'
+                                                name={category}
+                                                // ref={category}
+                                                value={category}
+                                                // onChange={handleChange}
+                                                className='opacity-0 absolute w-[26px] h-[26px]' />
                                             <div className="bg-[#D9D9D9]  rounded-md w-[26px] h-[26px] flex flex-shrink-0 justify-center items-center mr-2">
                                                 <svg className="fill-current hidden w-3 h-3 text-black pointer-events-none" version="1.1" viewBox="0 0 17 12" xmlns="http://www.w3.org/2000/svg">
                                                     <g fill="none" fillRule="evenodd">
@@ -77,7 +105,7 @@ const Marketplace = () => {
                                                 </svg>
                                             </div>
                                             <label htmlFor={category}>{category}</label>
-                                        </div>
+                                        </form>
                                     )
                                 })}
                             </div>
@@ -119,11 +147,11 @@ const Marketplace = () => {
                     {products.map((item) => {
                         if (item.id > 9) return
                         return (
-                            <div key={item.id} className='bg-white flex w-full flex-col p-3 shadow-[0px_34px_64px_rgba(217,225,244,0.36)] h-[414px] rounded-[15px]'>
+                            <Link href={`marketplace/${item.name}`} key={item.id} className='bg-white flex w-full flex-col p-3 shadow-[0px_34px_64px_rgba(217,225,244,0.36)] h-[414px] rounded-[15px]'>
                                 <Image className='w-full h-[280px] object-cover rounded-lg' src={item.image} alt={item.name} />
                                 <span className='text-[22px] leading-[34.67px] text-[#333] mt-[10px]'>{item.name}</span>
                                 <span className='text-[#333] text-[28px] font-bold leading-[44.13px] mt-[18px] pb-[7px]'>${item.price}</span>
-                            </div>
+                            </Link>
                         )
                     })}
                     <button className='h-[73px]  hidden md:block absolute right-[50%] translate-x-[50%] bottom-2 w-[249px] border border-[#333333] rounded-[10px] text-[30px] text-[#333333] font-medium text-center '>See more</button>
