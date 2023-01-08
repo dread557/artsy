@@ -70,7 +70,7 @@ const Marketplace = () => {
                 </div>
             </div>
             <div className=' flex gap-[57px] mt-[31px] md:mt-[89px]'>
-                <div className='w-[25%] hidden lg:block'>
+                <div className='w-[20%] hidden lg:block'>
                     <span className='hidden md:flex items-center justify-between gap-[14.67] border-b-4 border-[#AFB091] pb-2 pr-16'>
                         <Image className='w-[53.33px] h-[59.76px]' src={fil} alt='filter' />
                         <span className='text-[32px] font-medium'>Filter</span>
@@ -143,14 +143,17 @@ const Marketplace = () => {
                         </span>
                     </div>
                 </div>
-                <div className='grid relative grid-cols-1 pb-36 md:grid-cols-2 xl:grid-cols-3 gap-y-[42px] gap-x-[53px] justify-items-end w-full lg:w-[75%]'>
+                <div className='grid relative grid-cols-1 pb-36 md:grid-cols-2 xl:grid-cols-3 gap-y-[42px] gap-x-[53px] justify-items-end w-full lg:w-[80%]'>
                     {products.map((item) => {
                         if (item.id > 9) return
                         return (
-                            <Link href={`marketplace/${item.name}`} key={item.id} className='bg-white flex w-full flex-col p-3 shadow-[0px_34px_64px_rgba(217,225,244,0.36)] h-[414px] rounded-[15px]'>
+                            <Link href={`marketplace/${item.name}`} key={item.id} className='bg-white flex w-full justify-center flex-col p-3 shadow-[0px_34px_64px_rgba(217,225,244,0.36)] max-h-[414px] rounded-[15px]'>
                                 <Image className='w-full h-[280px] object-cover rounded-lg' src={item.image} alt={item.name} />
-                                <span className='text-[22px] leading-[34.67px] text-[#333] mt-[10px]'>{item.name}</span>
-                                <span className='text-[#333] text-[28px] font-bold leading-[44.13px] mt-[18px] pb-[7px]'>${item.price}</span>
+                                <div className='flex justify-between items-center md:items-start md:flex-col'>
+                                    <span className='md:text-[22px] leading-[34.67px] font-medium md:font-normal text-[#333] mt-[10px]'>{item.name}</span>
+                                    <span className='text-[#333] md:text-[28px] font-medium md:font-bold leading-[44.13px] mt-[18px] pb-[7px]'>${item.price}</span>
+                                </div>
+
                             </Link>
                         )
                     })}

@@ -21,6 +21,8 @@ export const products = [
         creator: "Ali Dawa",
         category: "Editorials",
         quantity: 1,
+        views: '1.7k',
+
     },
     {
         id: 2,
@@ -30,6 +32,8 @@ export const products = [
         creator: "Hatake Kakashi",
         category: "Fashion",
         quantity: 1,
+        views: '1.7k',
+
     },
     {
         id: 3,
@@ -39,6 +43,8 @@ export const products = [
         creator: "Adekunle Chiroma",
         category: "Optics",
         quantity: 1,
+        views: '1.7k',
+
     },
     {
         id: 4,
@@ -48,6 +54,8 @@ export const products = [
         creator: "Adekunle Chiroma",
         category: "Art & Museum",
         quantity: 1,
+        views: '1.7k',
+
     },
     {
         id: 5,
@@ -57,6 +65,8 @@ export const products = [
         creator: "Hatake Kakashi",
         category: "Nature",
         quantity: 1,
+        views: '1.7k',
+
     },
     {
         id: 6,
@@ -66,6 +76,8 @@ export const products = [
         creator: "Hatake Kakashi",
         category: "Nature",
         quantity: 1,
+        views: '1.7k',
+
     },
     {
         id: 7,
@@ -75,6 +87,8 @@ export const products = [
         creator: "Ali Dawa",
         category: "Art & Museum",
         quantity: 1,
+        views: '1.7k',
+
     },
     {
         id: 8,
@@ -84,6 +98,8 @@ export const products = [
         creator: "Adekunle Chiroma",
         category: "Optics",
         quantity: 1,
+        views: '1.7k',
+
     },
     {
         id: 9,
@@ -93,6 +109,8 @@ export const products = [
         creator: "Hatake Kakashi",
         category: "Fashion",
         quantity: 1,
+        views: '1.7k',
+
     },
     {
         id: 10,
@@ -102,6 +120,8 @@ export const products = [
         creator: "Hatake Kakashi",
         category: "Fashion",
         quantity: 1,
+        views: '1.7k',
+
     },
     {
         id: 11,
@@ -111,6 +131,8 @@ export const products = [
         creator: "Hatake Kakashi",
         category: "Fashion",
         quantity: 1,
+        views: '1.7k',
+
     },
     {
         id: 12,
@@ -120,6 +142,8 @@ export const products = [
         creator: "Hatake Kakashi",
         category: "Fashion",
         quantity: 1,
+        views: '1.7k',
+
     },
     {
         id: 13,
@@ -129,6 +153,8 @@ export const products = [
         creator: "Hatake Kakashi",
         category: "Fashion",
         quantity: 1,
+        views: '1.7k',
+
     },
 ];
 
@@ -150,6 +176,8 @@ export const featured = [
         creator: "Hatake Kakashi",
         category: "Fashion",
         quantity: 1,
+        views: '1.7k',
+
     },
     {
         id: 11,
@@ -159,6 +187,8 @@ export const featured = [
         creator: "Hatake Kakashi",
         category: "Fashion",
         quantity: 1,
+        views: '1.7k',
+
     },
     {
         id: 12,
@@ -168,6 +198,8 @@ export const featured = [
         creator: "Hatake Kakashi",
         category: "Fashion",
         quantity: 1,
+        views: '1.7k',
+
     },
     {
         id: 13,
@@ -177,5 +209,7 @@ export const featured = [
         creator: "Hatake Kakashi",
         category: "Fashion",
         quantity: 1,
+        views: '1.7k',
+
     },
 ];
