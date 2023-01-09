@@ -1,12 +1,14 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { products } from "../../data/products"
+import { products } from '../../data/products'
 
 import dia from '/public/dia.svg'
 import { BsArrowRight, BsHeartFill, BsHeart } from 'react-icons/bs'
 import { RiArrowDropUpLine } from 'react-icons/ri'
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from 'react-icons/md'
+import { ProductContext } from '../../contexts/productContext'
+import ExtraCollectionSlide from '../../components/ExtraCollectionSlide'
 
 
 export const getStaticPaths = () => {
@@ -36,13 +38,21 @@ const Product = ({ product }) => {
     const [desc, setDesc] = useState(false)
     const [listing, setListing] = useState(false)
     const [status, setStatus] = useState(false)
+    const { setCart } = useContext(ProductContext)
     const reduceQty = () => {
         if (quantity === 1) return
         setQuantity(prev => prev - 1)
+        product.quantity = quantity
     }
     const increaseQty = () => {
         setQuantity(prev => prev + 1)
+        product.quantity = quantity
     }
+
+    const addToCart = (product) => {
+        console.log(product)
+    }
+
     return (
         <div className="pl-[30px] mt-8 md:mt-20 pr-[30px] md:pl-[65px] md:pr-[65px] xl:pl-[120px] xl:pr-[120px]">
             <span className='flex items-center  text-[#BCB7B7] font-medium md:text-2xl mb-4'>
@@ -71,8 +81,8 @@ const Product = ({ product }) => {
                             <button className='' onClick={increaseQty}>+</button>
                         </div>
                         <div className='flex gap-5 md:gap-12'>
-                            <button className='flex items-center justify-center md:text-[26px] gap-3 h-[57.5px] md:h-[79.01px] w-[50%] bg-[#3341C1] text-white'>Add to cart <BsArrowRight /> </button>
-                            <button onClick={() => setLiked(!liked)} className='border flex items-center justify-center w-[80px] border-[#292929]'>
+                            <button onClick={() => addToCart(product)} className='flex items-center justify-center md:text-[26px] gap-3 h-[57.5px] md:h-[79.01px] w-[50%] bg-[#3341C1] text-white'>Add to cart <BsArrowRight /> </button>
+                            <button onClick={() => { setLiked(!liked); AddToFav(product) }} className='border flex items-center justify-center w-[80px] border-[#292929]'>
                                 {liked ? (
                                     <BsHeart className='h-[47.29px] w-[32.36px]' />
                                 ) : (
@@ -134,6 +144,7 @@ const Product = ({ product }) => {
                         </div>
                     </div>
                 </div>
+                <ExtraCollectionSlide />
             </div>
         </div>
     )
