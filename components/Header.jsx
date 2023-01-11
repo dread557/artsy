@@ -19,7 +19,9 @@ const Header = () => {
             {activeMenu && <Navbar />}
             <div className='flex gap-[11px]'>
                 <BiSearch className='w-[28px] h-[28px] text-[#333333] cursor-pointer' />
-                <BsCart3 className='w-[28px] h-[28px] text-[#333333] cursor-pointer' />
+                <Link href={'/checkout'}>
+                    <BsCart3 className='w-[28px] h-[28px] text-[#333333] cursor-pointer' />
+                </Link>
                 {screenSize >= 968 ? (<IoMdNotificationsOutline className='w-[28px] h-[28px] text-[#333333] cursor-pointer' />) : null}
             </div>
 

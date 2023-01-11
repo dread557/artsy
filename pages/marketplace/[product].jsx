@@ -38,7 +38,7 @@ const Product = ({ product }) => {
     const [desc, setDesc] = useState(false)
     const [listing, setListing] = useState(false)
     const [status, setStatus] = useState(false)
-    const { setCart } = useContext(ProductContext)
+    const { cart, setCart } = useContext(ProductContext)
     const reduceQty = () => {
         if (quantity === 1) return
         setQuantity(prev => prev - 1)
@@ -50,7 +50,11 @@ const Product = ({ product }) => {
     }
 
     const addToCart = (product) => {
-        console.log(product)
+        // console.log(product)
+        setCart(prevCart => {
+            return [...prevCart, product]
+        })
+        localStorage.setItem('cart', JSON.stringify(cart))
     }
 
     return (
@@ -65,7 +69,7 @@ const Product = ({ product }) => {
                 <Image className='w-full lg:w-[50%] object-cover lg:border-r border-[#333333] pt-[45px] lg:pb-[45px] lg:pr-6' src={product.image} alt={product.name} />
                 <div className='lg:w-[50%]'>
                     <span className='flex lg:pl-[30px] items-center mt-4 lg:mt-0 lg:pt-[58px] lg:pb-[58px] gap-[42px] justify-between lg:border-b border-[#333]  lg:pr-6'>
-                        <h3 className='md:text-[25px] whitespace-nowrap xl:text-[46px] font-bold'>{product.name}</h3>
+                        <h3 className='md:text-[25px] whitespace-nowrap xl:text-[36px] font-bold'>{product.name}</h3>
                         <span className='flex space-x-5 items-center'>
                             <Image className='hidden md:block' src={dia} alt='diamond' />
                             <p className='md:text-[25px] xl:text-[40px] font-medium font-stix'><span className='md:hidden'>$</span> {product.price}</p>

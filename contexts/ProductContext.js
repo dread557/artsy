@@ -4,7 +4,7 @@ import { products } from '../data/products'
 export const ProductContext = createContext()
 const ProductContextProvider = (props) => {
     const [productList, setProductList] = useState(null)
-    const [cart, setCart] = useState(null)
+    const [cart, setCart] = useState([])
     const [favorite, setFavorite] = useState([])
 
     const toggleFavorite = (id) => {

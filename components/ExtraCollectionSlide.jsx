@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { BsHeartFill, BsHeart } from 'react-icons/bs'
 import 'swiper/css';
 import Link from 'next/link';
+import dia from '/public/dia.svg'
 
 const ExtraCollectionSlide = () => {
     const [liked, setLiked] = useState(false)
@@ -43,6 +44,13 @@ const ExtraCollectionSlide = () => {
                                 </button>
                                 <Link href={`${item.name}`}>
                                     <Image className='pt-[50px]' src={item.image} alt={item.name} />
+                                    <div className='flex justify-between items-center'>
+                                        <p className='md:text-[24px] whitespace-nowrap xl:text-[32px] font-bold'>{item.name}</p>
+                                        <span className='flex gap-[5px] items-center'>
+                                            <Image className='w-[21px] h-[26px]' src={dia} alt='diamond' />
+                                            <p className='text-[24px] xl:text-[32px] font-medium font-stix'> {item.price}</p>
+                                        </span>
+                                    </div>
                                 </Link>
                             </div>
                         </SwiperSlide>
