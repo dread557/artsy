@@ -132,10 +132,10 @@ const Product = ({ product }) => {
                     <div className='w-full border-t border-[#333] calc block lg:hidden'></div>
                 </div>
             </div>
-            <div className='mt-[75px]'>
-                <div className='flex items-center justify-between p-6 rounded-2xl shadow-[4px_4px_64px_rgba(0,0,0,0.08)]'>
-                    <p className='text-[32px] font-medium'>Explore more from this collection</p>
-                    <div className='flex items-center gap-[19px] mt-[21px]'>
+            <div className='mt-[75px] mb-14'>
+                <div className='flex items-center justify-between md:p-6 rounded-2xl md:shadow-[4px_4px_64px_rgba(0,0,0,0.08)]'>
+                    <p className='text-2xl md:text-[32px] font-medium'>Explore more from this collection</p>
+                    <div className='hidden md:flex items-center gap-[19px] mt-[21px]'>
                         <div className='w-[59px] cursor-pointer h-[59px] rounded-full bg-transparent relative border border-[#616161]'>
                             <MdKeyboardArrowLeft className='absolute  top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[45.42px] h-[34.34px]' />
                         </div>
@@ -145,6 +145,13 @@ const Product = ({ product }) => {
                     </div>
                 </div>
                 <ExtraCollectionSlide />
+                <Link href={'/marketplace'} class="hidden md:flex mt-[30px] md:mt-[100px]  justify-center">
+                    <div class="rounded-xl bg-gradient-to-r from-[#78A3AD] to-[#C056097D] p-1">
+                        <div class="flex h-full w-full items-center justify-center bg-white back">
+                            <button className='rounded-2xl w-[313px] h-[91px] text-[36px]'>Explore all</button>
+                        </div>
+                    </div>
+                </Link>
             </div>
         </div>
     )
