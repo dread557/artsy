@@ -12,7 +12,8 @@ module.exports = {
         clash: ['Clash Display Variable Bold', 'serif'],
         bellefair: ['Bellefair', 'serif'],
         poppins: ['Poppins', 'sans-serif'],
-        basker: ['Baskervville', 'serif']
+        basker: ['Baskervville', 'serif'],
+        cardo: ['Cardo', 'serif']
       }
     },
   },

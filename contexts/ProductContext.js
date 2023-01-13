@@ -7,9 +7,9 @@ const ProductContextProvider = (props) => {
     const [cart, setCart] = useState([])
     const [favorite, setFavorite] = useState([])
 
-    const toggleFavorite = (id) => {
-        const product = productList.find()
-    }
+    // const toggleFavorite = (id) => {
+    //     const product = productList.find()
+    // }
 
     useEffect(() => {
         localStorage.setItem('cart', JSON.stringify(cart))

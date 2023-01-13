@@ -9,6 +9,7 @@ import { RiArrowDropUpLine } from 'react-icons/ri'
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from 'react-icons/md'
 import { ProductContext } from '../../contexts/productContext'
 import ExtraCollectionSlide from '../../components/ExtraCollectionSlide'
+import { useRouter } from 'next/router'
 
 
 export const getStaticPaths = () => {
@@ -39,6 +40,7 @@ const Product = ({ product }) => {
     const [listing, setListing] = useState(false)
     const [status, setStatus] = useState(false)
     const { cart, setCart } = useContext(ProductContext)
+    const [disabledBtn, setDisabledBtn] = useState(false)
     const reduceQty = () => {
         if (quantity === 1) return
         setQuantity(prev => prev - 1)
@@ -49,12 +51,19 @@ const Product = ({ product }) => {
         product.quantity = quantity
     }
 
+    const router = useRouter()
     const addToCart = (product) => {
         // console.log(product)
         setCart(prevCart => {
+            const check = cart.find(({ name }) => name === product.name)
+            if (check) {
+                setDisabledBtn(true)
+                return [...cart]
+            }
             return [...prevCart, product]
         })
         localStorage.setItem('cart', JSON.stringify(cart))
+        router.push('/checkout')
     }
 
     return (
@@ -63,7 +72,7 @@ const Product = ({ product }) => {
                 <Link href='/'>Home/</Link>
                 <Link href='/marketplace'> Marketplace/ </Link>
                 <Link href='#'>Editorials/</Link>
-                <Link className='text-[#292929]' href='#'>{product.name}</Link>
+                <Link className='text-[#292929] whitespace-nowrap text-xs md:text-base' href='#'>{product.name}</Link>
             </span>
             <div className='flex flex-col lg:flex-row border-t lg:border border-[#333333] lg:pl-6 lg:mt-12'>
                 <Image className='w-full lg:w-[50%] object-cover lg:border-r border-[#333333] pt-[45px] lg:pb-[45px] lg:pr-6' src={product.image} alt={product.name} />
@@ -85,7 +94,7 @@ const Product = ({ product }) => {
                             <button className='' onClick={increaseQty}>+</button>
                         </div>
                         <div className='flex gap-5 md:gap-12'>
-                            <button onClick={() => addToCart(product)} className='flex items-center justify-center md:text-[26px] gap-3 h-[57.5px] md:h-[79.01px] w-[50%] bg-[#3341C1] text-white'>Add to cart <BsArrowRight /> </button>
+                            <button disabled={disabledBtn} onClick={() => addToCart(product)} className='flex items-center justify-center md:text-[26px] gap-3 h-[57.5px] md:h-[79.01px] w-[50%] bg-[#3341C1] text-white'>Add to cart <BsArrowRight /> </button>
                             <button onClick={() => { setLiked(!liked); AddToFav(product) }} className='border flex items-center justify-center w-[80px] border-[#292929]'>
                                 {liked ? (
                                     <BsHeart className='h-[47.29px] w-[32.36px]' />
