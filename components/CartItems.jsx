@@ -43,25 +43,26 @@ const CartItems = () => {
     )
   }
   return (
-    <div className='mt-[60px]'>
+    <div className='mb-[400px] md:mb-0'>
       {cart.map((item, index) => (
-        <div className='flex justify-between' key={index}>
-          <div className='flex gap-10'>
-            <Image className='h-[196px] object-cover rounded' src={item.image} alt={item.name} />
+        <div className='flex gap-[52px] justify-between md:pt-[60px] mt-[60px] md:border-t-[0.3px] border-[#747474]' key={index}>
+          <div className='flex gap-5 md:gap-10'>
+            <Image className='w-[125px] md:w-auto h-auto md:h-[196px] object-cover rounded' src={item.image} alt={item.name} />
             <div className='flex flex-col gap-5'>
-              <h4 className='font-medium text-2xl text-[#292929]'>{item.name}</h4>
-              <p className='text-2xl text-[#888] '>{item.creator}</p>
-              <p className='text-xl text-[#888]'>Size: 200 ft</p>
-              <div className='flex md:text-[32px] gap-5 font-medium'>
-                <button className='' onClick={() => reduceQty(item.id)}>-</button>
+              <p className='font-cardo text-[#888] italic md:hidden'>{item.category}</p>
+              <h4 className='font-bold text-[18px] md:text-2xl text-[#292929]'>{item.name}</h4>
+              <p className='text-2xl hidden md:block text-[#888] '>{item.creator}</p>
+              <p className='text-xl hidden md:block text-[#888]'>Size: 200 ft</p>
+              <div className='flex justify-center md:justify-between items-center p-2 h-8 md:h-auto text-xl md:text-[32px] gap-5 font-medium md:border-none border border-black rounded-[10px]'>
+                <button className='border-r md:border-none border-[#888] pr-[10px]' onClick={() => reduceQty(item.id)}>-</button>
                 <p className=''>{item.quantity}</p>
-                <button className='' onClick={() => increaseQty(item.id)}>+</button>
+                <button className='border-l md:border-none border-[#888] pl-[10px]' onClick={() => increaseQty(item.id)}>+</button>
               </div>
             </div>
           </div>
           <div className='flex flex-col justify-between'>
             <button onClick={() => removeItem(item.id)}><MdOutlineCancel className='w-10 h-10' /></button>
-            <span className='font-cardo text-4xl'>${item.price}</span>
+            <span className='font-cardo text-2xl md:text-4xl'>${item.price}</span>
           </div>
         </div>
       ))}
