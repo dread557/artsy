@@ -61,7 +61,7 @@ const CartItems = () => {
             </div>
           </div>
           <div className='flex flex-col justify-between'>
-            <button onClick={() => removeItem(item.id)}><MdOutlineCancel className='w-10 h-10' /></button>
+            <button onClick={() => removeItem(item.id)}><MdOutlineCancel className='w-10 h-10 ' /></button>
             <span className='font-cardo text-2xl md:text-4xl'>${item.price}</span>
           </div>
         </div>
