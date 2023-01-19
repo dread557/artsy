@@ -14,7 +14,7 @@ import head1 from '/public/head-1.png'
 import head2 from '/public/head-2.png'
 import head3 from '/public/head-3.png'
 import head4 from '/public/head-4.png'
-import loader from '/public/loader.png'
+import loader from '/public/Loader.png'
 import VerticalSlider from '../components/VerticalSlider'
 
 
