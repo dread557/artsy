@@ -6,6 +6,7 @@ import AuctionSlider from '../components/AuctionSlider'
 import { VscArrowRight } from 'react-icons/vsc'
 import { MdArrowForward } from 'react-icons/md'
 
+
 import heroMob from '/public/hero-mob.png'
 import feat from '/public/feat.png'
 import feat2 from '/public/feat2.png'
@@ -16,6 +17,7 @@ import head3 from '/public/head-3.png'
 import head4 from '/public/head-4.png'
 import loader from '/public/Loader.png'
 import VerticalSlider from '../components/VerticalSlider'
+import FeaturedProducts from '../components/FeaturedProducts'
 
 
 export default function Home() {
@@ -38,80 +40,18 @@ export default function Home() {
       <section className='pl-[30px] pr-[30px] md:pl-[65px] md:pr-[65px] lg:pl-[120px] lg:pr-[120px]'>
         <h3 className='text-[28px] pb-[30px] md:text-[48px] font-satoshi font-bold mt-[100px] md:mt-[160px] md:font-medium'>Featured products</h3>
         <hr className='bg-[#333333]' />
-        <div className='flex flex-col md:flex-row cursor-pointer mt-[61px] mb-[74px]  justify-between gap-[37px]'>
-          <div className='relative w-full h-[305px]'>
-            <Image className='h-full object-cover flex flex-wrap content-center' src={feat} alt='woman' />
-            <div className='absolute inset-0 z-10 bg-[#333] text-center flex flex-col items-center justify-center lg:opacity-0 hover:opacity-60 bg-opacity-40 duration-300'>
-              <Link href='#' className='flex gap-4 items-center text-white text-3xl '> View product <VscArrowRight /></Link>
-            </div>
-          </div>
-          <article className='flex flex-col justify-between'>
-            <h3 className='mb-[38px] font-stix font-bold text-[40px]'>The Boolean Egyptian</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit ut aliquam, purus sit amet luctus venenatis,
-              lectus magna fringilla urna, porttitor rhoncus do&lor pur</p>
-            <div className=' flex gap-2 md:justify-between items-center mt-[38px]'>
-              <div className='flex items-center'>
-                <Image src={head1} alt='' />
-                <Image className='-ml-4' src={head2} alt='' />
-                <Image className='-ml-4' src={head3} alt='' />
-                <Image className='-ml-4' src={head4} alt='' />
-              </div>
-              <p className='text-[1rem] md:text-[24px] font-medium'>64 major creators</p>
-              <span className='w-[78px] hidden h-[78px] border-[0.5px] border-[#333333] text-[#616161] rounded-full lg:flex items-center justify-center text-3xl cursor-pointer'><VscArrowRight /></span>
-            </div>
-          </article>
-        </div>
+        <section className='[&>*:nth-child(even)]:md:flex-row-reverse'>
+          <FeaturedProducts img={feat} title={'The Boolean Egyptian'} text={`Lorem ipsum dolor sit amet, consectetur adipiscing
+                elit ut aliquam, purus sit amet luctus venenatis,
+          lectus magna fringilla urna, porttitor rhoncus do&lor pur`} />
+          <FeaturedProducts img={feat2} title={'Are We There Yet?'} text={`Lorem ipsum dolor sit amet, consectetur adipiscing
+                elit ut aliquam, purus sit amet luctus venenatis,
+          lectus magna fringilla urna, porttitor rhoncus do&lor pur`} />
+          <FeaturedProducts img={feat3} title={'Oloibiri 1997'} text={`Lorem ipsum dolor sit amet, consectetur adipiscing
+                elit ut aliquam, purus sit amet luctus venenatis,
+          lectus magna fringilla urna, porttitor rhoncus do&lor pur`} />
+        </section>
         <hr className='bg-[#333333]' />
-        <div className='flex flex-col md:flex-row mt-[61px] mb-[74px] justify-between gap-[37px]'>
-          <article className='flex flex-col justify-between'>
-            <h3 className='mb-[38px] font-stix font-bold text-[40px]'>Are We There Yet?</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit ut aliquam, purus sit amet luctus venenatis,
-              lectus magna fringilla urna, porttitor rhoncus do&lor pur</p>
-            <div className=' flex gap-2 md:justify-between items-center mt-[38px]'>
-              <div className='flex items-center'>
-                <Image src={head1} alt='' />
-                <Image className='-ml-4' src={head2} alt='' />
-                <Image className='-ml-4' src={head3} alt='' />
-                <Image className='-ml-4' src={head4} alt='' />
-              </div>
-              <p className='text-[1rem] md:text-[24px] font-medium'>64 major creators</p>
-              <span className='w-[78px] hidden h-[78px] border-[0.5px] border-[#333333] text-[#616161] rounded-full lg:flex items-center justify-center text-3xl cursor-pointer'><VscArrowRight /></span>
-            </div>
-          </article>
-          <div className='relative w-full h-[305px]'>
-            <Image className='h-full object-cover flex flex-wrap content-center' src={feat2} alt='woman' />
-            <div className='absolute inset-0 z-10 bg-[#333] text-center flex flex-col items-center justify-center lg:opacity-0 hover:opacity-60 bg-opacity-40 duration-300'>
-              <Link href='#' className='flex gap-4 items-center text-white text-3xl '> View product <VscArrowRight /></Link>
-            </div>
-          </div>
-        </div>
-        <hr className='bg-[#333333]' />
-        <div className='flex flex-col md:flex-row mt-[61px] mb-[74px] justify-between gap-[37px]'>
-          <div className='relative w-full h-[305px]'>
-            <Image className='h-full object-cover flex flex-wrap content-center' src={feat3} alt='woman' />
-            <div className='absolute inset-0 z-10 bg-[#333] text-center flex flex-col items-center justify-center lg:opacity-0 hover:opacity-60 bg-opacity-40 duration-300'>
-              <Link href='#' className='flex gap-4 items-center text-white text-3xl '> View product <VscArrowRight /></Link>
-            </div>
-          </div>
-          <article className='flex flex-col justify-between'>
-            <h3 className='mb-[38px] font-stix font-bold text-[40px]'>Oloibiri 1997</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit ut aliquam, purus sit amet luctus venenatis,
-              lectus magna fringilla urna, porttitor rhoncus do&lor pur</p>
-            <div className=' flex gap-2 md:justify-between items-center mt-[38px]'>
-              <div className='flex items-center'>
-                <Image src={head1} alt='' />
-                <Image className='-ml-4' src={head2} alt='' />
-                <Image className='-ml-4' src={head3} alt='' />
-                <Image className='-ml-4' src={head4} alt='' />
-              </div>
-              <p className='text-[1rem] md:text-[24px] font-medium'>64 major creators</p>
-              <span className='w-[78px] hidden h-[78px] border-[0.5px] border-[#333333] text-[#616161] rounded-full lg:flex items-center justify-center text-3xl cursor-pointer'><VscArrowRight /></span>
-            </div>
-          </article>
-        </div>
       </section>
       <AuctionSlider />
       <div>

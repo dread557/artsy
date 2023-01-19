@@ -2,6 +2,8 @@ import React, { useContext } from 'react'
 import Link from 'next/link'
 import { ProductContext } from '../../contexts/ProductsContext'
 import CheckoutNav from '../../components/CheckoutNav'
+import CartItems from '../../components/CartItems'
+import ShippingForm from '../../components/ShippingForm'
 
 const Shipping = () => {
     const { cart } = useContext(ProductContext)
@@ -15,6 +17,12 @@ const Shipping = () => {
                 <Link href='checkout/shipping' className='text-[#292929] whitespace-nowrap text-xs'>Shipping</Link>
             </span>
             <CheckoutNav />
+            <section className='flex justify-between'>
+                <ShippingForm />
+                <div className='hidden md:block'>
+                  <CartItems />  
+                </div>   
+            </section>
         </div>
     )
 }

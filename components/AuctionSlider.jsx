@@ -10,7 +10,7 @@ const AuctionSlider = () => {
     return (
         <div className='bg-gradient-to-r from-[#4693ED] via-[#79C2D2] to-[#C056097D] pl-[30px] pr-[30px] md:pl-[65px] md:pr-[65px] lg:pl-[120px] lg:pr-[120px]'>
             <h2 className='font-medium font-satoshi text-2xl lg:text-[40px] leading-[54px] text-white border-b-2 pt-[25px] pb-[17px] mb-[21px]'>See Upcoming Auctions and Exhibitions</h2>
-            <div style={{ backgroundImage: `url(${bg.src})` }} className=' bg-no-repeat h-[546px] flex flex-col justify-center lg:justify-end p-1 lg:p-[30px]'>
+            <div style={{ backgroundImage: `url(${bg.src})` }} className=' bg-no-repeat h-[336px] bg-cover p-3 lg:h-[546px] flex flex-col justify-start lg:justify-end lg:p-[30px]'>
                 <span className='flex items-baseline gap-2 md:ml-[41px]'>
                     <div className='h-4 w-4 bg-white rounded-full'></div>
                     <h2 className='font-bellefair text-white ml-[21px] lg:ml-0 md:text-[29.23px] max-w-[353.88px]'>MONALISA REDEFINED IN STYLE.</h2>
@@ -31,7 +31,7 @@ const AuctionSlider = () => {
                     </div>
                 </span>
             </div>
-            <div className='flex justify-between items-center pb-[26px]'>
+            <div className='hidden md:flex justify-between items-center pb-[26px]'>
                 <div className='bg-[#AEAEAE] w-[295.69px] h-[10px] rounded-[50px]'>
                     <div className='bg-white w-[15%] h-full  rounded-[50px]'>
 
