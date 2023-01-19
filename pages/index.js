@@ -36,7 +36,7 @@ export default function Home() {
           seamlessly in one place. Register to get top access.</p>
       </div>
       <HeroSlider />
-      <Image className='flex md:hidden object-contain' src={heroMob} alt='hero' />
+      <Image className='flex md:hidden object-contain px-[30px] pt-[30px]' src={heroMob} alt='hero' />
       <section className='pl-[30px] pr-[30px] md:pl-[65px] md:pr-[65px] lg:pl-[120px] lg:pr-[120px]'>
         <h3 className='text-[28px] pb-[30px] md:text-[48px] font-satoshi font-bold mt-[100px] md:mt-[160px] md:font-medium'>Featured products</h3>
         <hr className='bg-[#333333]' />
