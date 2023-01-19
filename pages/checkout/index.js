@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import Link from 'next/link'
-import { ProductContext } from '../../contexts/productContext'
+import { ProductContext } from '../../contexts/ProductsContext'
 import { useRouter } from 'next/router'
 import CheckoutNav from '../../components/CheckoutNav'
 import CartItems from '../../components/CartItems'

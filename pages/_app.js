@@ -1,5 +1,5 @@
 import Layout from '../components/Layout'
-import ProductContextProvider from '../contexts/productContext'
+import ProductContextProvider from '../contexts/ProductsContext'
 import ScreensizeProvider from '../contexts/Screensize'
 import '../styles/globals.css'
 

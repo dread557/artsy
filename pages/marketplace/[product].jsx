@@ -7,7 +7,7 @@ import dia from '/public/dia.svg'
 import { BsArrowRight, BsHeartFill, BsHeart } from 'react-icons/bs'
 import { RiArrowDropUpLine } from 'react-icons/ri'
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from 'react-icons/md'
-import { ProductContext } from '../../contexts/productContext'
+import { ProductContext } from '../../contexts/ProductsContext'
 import ExtraCollectionSlide from '../../components/ExtraCollectionSlide'
 import { useRouter } from 'next/router'
 

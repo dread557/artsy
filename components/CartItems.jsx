@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { ProductContext } from '../contexts/productContext'
+import { ProductContext } from '../contexts/ProductsContext'
 import Image from 'next/image'
 import { MdOutlineCancel } from 'react-icons/md'
 

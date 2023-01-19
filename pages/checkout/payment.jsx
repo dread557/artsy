@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import Link from 'next/link'
-import { ProductContext } from '../../contexts/productContext'
+import { ProductContext } from '../../contexts/ProductsContext'
 import CheckoutNav from '../../components/CheckoutNav'
 
 const Payment = () => {

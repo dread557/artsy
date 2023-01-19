@@ -8,7 +8,7 @@ import { ScreenContext } from '../contexts/Screensize'
 import Navbar from './Navbar'
 import NavMenu from './NavMenu'
 import Link from 'next/link'
-import { ProductContext } from '../contexts/productContext'
+import { ProductContext } from '../contexts/ProductsContext'
 
 const Header = () => {
     const { cart } = useContext(ProductContext)
