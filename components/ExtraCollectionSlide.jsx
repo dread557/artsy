@@ -31,8 +31,8 @@ const ExtraCollectionSlide = () => {
                     },
                 }}
             >
-                {selected.map((item, index) => (
-                    <div key={index}>
+                {selected.map((item) => (
+                    <div key={item.id}>
                         <SwiperSlide>
                             <div className=' border border-[#333] p-4 relative'>
                                 <button onClick={() => { setLiked(!liked) }} className='absolute right-[40px]'>

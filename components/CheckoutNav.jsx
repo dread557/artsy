@@ -10,7 +10,7 @@ const CheckoutNav = () => {
     ]
     return (
         <>
-            <div className='flex md:hidden h-[50px] max-w-[313px] bg-[#3A3A3A] mt-[36px] gap-[55px] justify-around items-center rounded-[40px]'>
+            <div className='flex md:hidden h-[50px] max-w-[313px] mx-auto  bg-[#3A3A3A] mt-[36px] gap-[55px] justify-around items-center rounded-[40px]'>
                 <button className='bg-white h-[38px] w-[110px] rounded-[27px] text-black'>Shop</button>
                 <button className='text-white'>Scheduled</button>
             </div>
@@ -19,11 +19,11 @@ const CheckoutNav = () => {
                     links.map((link, index) => {
                         const isActive = router.asPath === link.link;
                         return (
-                            <Link className={isActive ? 'text-2xl font-medium border-b text-[#292929] border-[#2F4333] pb-3' : 'text-[#888] text-2xl pb-3'}
-                                href={link.link}
+                            <span className={isActive ? 'text-2xl font-medium border-b text-[#292929] border-[#2F4333] pb-3' : 'text-[#888] text-2xl pb-3'}
+                                // href={link.link}
                                 key={index}
                             >
-                                {link.name}</Link>
+                                {link.name}</span>
                         )
                     })
                 }

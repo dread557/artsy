@@ -4,6 +4,7 @@ import { ProductContext } from '../../contexts/ProductsContext'
 import CheckoutNav from '../../components/CheckoutNav'
 import CartItems from '../../components/CartItems'
 import ShippingForm from '../../components/ShippingForm'
+import ItemsCost from '../../components/ItemsCost'
 
 const Shipping = () => {
     const { cart } = useContext(ProductContext)
@@ -17,12 +18,19 @@ const Shipping = () => {
                 <Link href='checkout/shipping' className='text-[#292929] whitespace-nowrap text-xs'>Shipping</Link>
             </span>
             <CheckoutNav />
-            <section className='flex justify-between'>
+            <section className='flex justify-between gap-[105px]'>
                 <ShippingForm />
                 <div className='hidden md:block'>
-                  <CartItems />  
-                </div>   
+                    <CartItems /> 
+                    {cart.length === 0 ? null : (
+                        <>
+                            <hr className='my-[50px]'/>
+                          <ItemsCost />  
+                        </>
+                    ) }
+                </div> 
             </section>
+            <Link className='text-[#006CA2] underline self-center font-medium text-[18px] lg:hidden' href='/checkout'>Go back to cart </Link>
         </div>
     )
 }
