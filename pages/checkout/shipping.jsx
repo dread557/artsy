@@ -17,7 +17,6 @@ const Shipping = () => {
                 <Link href='/checkout'>Cart/</Link>
                 <Link href='checkout/shipping' className='text-[#292929] whitespace-nowrap text-xs'>Shipping</Link>
             </span>
-            <CheckoutNav />
             <section className='flex justify-between gap-[105px]'>
                 <ShippingForm />
                 <div className='hidden md:block'>
@@ -30,7 +29,7 @@ const Shipping = () => {
                     ) }
                 </div> 
             </section>
-            <Link className='text-[#006CA2] underline self-center font-medium text-[18px] lg:hidden' href='/checkout'>Go back to cart </Link>
+            <Link className='text-[#006CA2] underline flex justify-center mb-14 text-center font-medium text-[18px] lg:hidden' href='/checkout'>Go back to cart </Link>
         </div>
     )
 }

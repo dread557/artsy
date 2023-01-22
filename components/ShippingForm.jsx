@@ -5,37 +5,38 @@ import Input from './Input'
 const ShippingForm = () => {
     const router = useRouter()
     return (
-        <form className='flex flex-col w-full lg:w-[50%] gap-[60px] mt-[60px]' id='shippingForm'>
+        <form className='flex flex-col w-full lg:w-[50%] gap-[30px] md:gap-[60px] mt-[30px]' id='shippingForm'>
             <div>
-                <label className='flex flex-col gap-[17px] text-[#888] text-[26px]'>
+                <label className='flex flex-col gap-[15px] md:gap-[17px] text-[#888] text-lg md:text-[26px]'>
                     Your Email
                     <Input type={'email'} name={'email'} placeholder={'aanuoluwateenah@gmail.com'} />
                 </label>
-                <div className='flex gap-[13px] mt-[31px]'>
-                    <input className='w-[26px] h-[26px]' type='checkbox' />
-                    <p className='text-[#747474] text-xl'>Get updates about new drops & exclusive offers</p>
+                <div className='flex gap-[13px] mt-[9px] md:mt-[31px]'>
+                    <input className='w-4 h-4 md:w-[26px] md:h-[26px]' type='checkbox' />
+                    <p className='text-[#747474] text-[13px] md:text-xl'>Get updates about new drops & exclusive offers</p>
                 </div>   
             </div>
-            <label className='flex flex-col gap-[17px] text-[#888] text-[26px]'>
+            <label className='flex flex-col gap-[15px] md:gap-[17px] text-[#888] text-lg md:text-[26px]'>
                 Your full name
                 <Input type={'text'} name={'full name'} placeholder={'Anuoluwapo Bamisaye'} />
             </label>
-            <label className='flex flex-col gap-[17px] text-[#888] text-[26px]'>
+            <label className='flex flex-col gap-[15px] md:gap-[17px] text-[#888] text-lg md:text-[26px]'>
                 Choose a wallet
-                <select name='wallets' id='wallets' form='shippingFom' className='h-[76px] w-full px-[30px] rounded-[10px] text-[#747474] bg-[#F2F2F2] border-[.5px] border-[#747474]'>
+                <select name='wallets' id='wallets' form='shippingFom' className='h-[51px] w-full px-[30px] rounded-[10px] text-[#747474] bg-[#F2F2F2] border-[.5px] border-[#747474]'>
+                    <option value=''></option>
                     <option value='Metamask'>Metamask</option>
                     <option value='Binance'>Binance</option>
                     <option value='Opensea'>Opensea</option>
                 </select>                
             </label>
-            <label className='flex flex-col gap-[17px] text-[#888] text-[26px]'>
+            <label className='flex flex-col gap-[15px] md:gap-[17px] text-[#888] text-lg md:text-[26px]'>
                 City
                 <Input type={'text'} name={'city'} />
             </label>
-            <div className='flex gap-[20px]'>
-                <label className='flex flex-col gap-[17px] text-[#888] text-[26px]'>
+            <div className='flex flex-col lg:flex-row gap-[20px]'>
+                <label className='flex flex-col gap-[15px] md:gap-[17px] text-[#888] text-lg md:text-[26px]'>
                     Country
-                    <select name='wallets' id='country' form='shippingFom' className='h-[76px] w-full px-[30px] rounded-[10px] text-[#747474] bg-[#F2F2F2] border-[.5px] border-[#747474]'>
+                    <select name='wallets' id='country' form='shippingFom' className='h-[51px] w-full px-[30px] rounded-[10px] text-[#747474] bg-[#F2F2F2] border-[.5px] border-[#747474]'>
                         <option value=""></option>
                         <option value="Afghanistan">Afghanistan</option>
                         <option value="Åland Islands">Åland Islands</option>
@@ -283,12 +284,12 @@ const ShippingForm = () => {
                         <option value="Zimbabwe">Zimbabwe</option>
                     </select>
                 </label> 
-                <label className='flex flex-col gap-[17px] text-[#888] text-[26px]'>
+                <label className='flex flex-col gap-[15px] md:gap-[17px] text-[#888] whitespace-nowrap text-lg md:text-[26px]'>
                     Postal code
                     <Input type={'number'} name={'postalCode'} />
                 </label>
             </div>
-            <label className='flex flex-col gap-[17px] text-[#888] text-[26px]'>
+            <label className='flex flex-col gap-[15px] md:gap-[17px] text-[#888] text-lg md:text-[26px]'>
                 Phone Number
                 <Input type={'tel'} name={'phoneNumber'} />
             </label>
