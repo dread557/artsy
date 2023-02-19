@@ -7,9 +7,18 @@ const ProductContextProvider = (props) => {
     const [cart, setCart] = useState([])
     const [favorite, setFavorite] = useState([])
 
-    // const toggleFavorite = (id) => {
-    //     const product = productList.find()
-    // }
+    const toggleFavorite = (id) => {
+        let product = products.find(item => item.id == id)
+        setFavorite(prevItem => {
+            // Filter out item when in favorite already 
+            if (favorite.some(item => item.id == id)) {
+                return favorite.filter(item => item.id != id)
+            } else {
+                // Otherwise add it to cart 
+                return [...prevItem, product]
+            }
+        })
+    }
 
     useEffect(() => {
         localStorage.setItem('cart', JSON.stringify(cart))
@@ -26,7 +35,7 @@ const ProductContextProvider = (props) => {
     }, [])
 
     return (
-        <ProductContext.Provider value={{ productList, cart, setCart, favorite, setFavorite }}>
+        <ProductContext.Provider value={{ productList, cart, setCart, toggleFavorite, favorite }}>
             {props.children}
         </ProductContext.Provider>
     )

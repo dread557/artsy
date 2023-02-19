@@ -39,7 +39,7 @@ const Product = ({ product }) => {
     const [desc, setDesc] = useState(false)
     const [listing, setListing] = useState(false)
     const [status, setStatus] = useState(false)
-    const { cart, setCart } = useContext(ProductContext)
+    const { cart, setCart, toggleFavorite, favorite } = useContext(ProductContext)
     const [disabledBtn, setDisabledBtn] = useState(false)
     const reduceQty = () => {
         if (quantity === 1) return
@@ -65,6 +65,8 @@ const Product = ({ product }) => {
         localStorage.setItem('cart', JSON.stringify(cart))
         router.push('/checkout')
     }
+
+    console.log(favorite);
 
     return (
         <div className="pl-[30px] mt-8 md:mt-20 pr-[30px] md:pl-[65px] md:pr-[65px] xl:pl-[120px] xl:pr-[120px]">
@@ -95,11 +97,11 @@ const Product = ({ product }) => {
                         </div>
                         <div className='flex gap-5 md:gap-12'>
                             <button disabled={disabledBtn} onClick={() => addToCart(product)} className='flex items-center justify-center md:text-[26px] gap-3 h-[57.5px] md:h-[79.01px] w-[50%] bg-[#3341C1] text-white'>Add to cart <BsArrowRight /> </button>
-                            <button onClick={() => { setLiked(!liked); AddToFav(product) }} className='border flex items-center justify-center w-[80px] border-[#292929]'>
-                                {liked ? (
-                                    <BsHeart className='h-[47.29px] w-[32.36px]' />
-                                ) : (
+                            <button onClick={() => { setLiked(!liked); toggleFavorite(product.id) }} className='border flex items-center justify-center w-[80px] border-[#292929]'>
+                                {favorite.some(item => item.id == product.id) ? (
                                     <BsHeartFill className='text-red-700 h-[47.29px] w-[32.36px]' />
+                                ) : (
+                                    <BsHeart className='h-[47.29px] w-[32.36px]' />
                                 )}
                             </button>
                         </div>

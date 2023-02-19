@@ -284,7 +284,7 @@ const ShippingForm = () => {
                         <option value="Zimbabwe">Zimbabwe</option>
                     </select>
                 </label>
-                <label className='flex flex-col gap-[15px] md:gap-[17px] text-[#888] whitespace-nowrap text-lg md:text-[26px]'>
+                <label className='flex flex-col w-full gap-[15px] md:gap-[17px] text-[#888] whitespace-nowrap text-lg md:text-[26px]'>
                     Postal code
                     <Input type={'number'} name={'postalCode'} />
                 </label>
