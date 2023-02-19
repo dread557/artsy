@@ -52,17 +52,17 @@ const CartItems = () => {
               <p className='font-cardo text-[#888] italic md:hidden'>{item.category}</p>
               <h4 className='font-bold text-[18px] md:text-2xl text-[#292929]'>{item.name}</h4>
               <p className='text-2xl hidden md:block text-[#888] '>{item.creator}</p>
-              <p className='text-xl hidden md:block text-[#888]'>Size: 200 ft</p>
+              <p className='text-xl hidden md:block text-[#888]'>Size: <span className='text-[#292929]'>200 ft</span></p>
               <div className='flex justify-center md:justify-between items-center p-2 h-8 md:h-auto text-xl md:text-[32px] gap-5 font-medium md:border-none border border-black rounded-[10px]'>
-                <button className='border-r md:border-none border-[#888] pr-[10px]' onClick={() => reduceQty(item.id)}>-</button>
-                <p className=''>{item.quantity}</p>
-                <button className='border-l md:border-none border-[#888] pl-[10px]' onClick={() => increaseQty(item.id)}>+</button>
+                <button className='border-r md:border-none border-[#888] pr-[10px] text-[#292929]' onClick={() => reduceQty(item.id)}>-</button>
+                <p className='text-[#292929]'>{item.quantity}</p>
+                <button className='border-l md:border-none border-[#888] pl-[10px] text-[#292929]' onClick={() => increaseQty(item.id)}>+</button>
               </div>
             </div>
           </div>
           <div className='flex flex-col justify-between'>
-            <button onClick={() => removeItem(item.id)}><MdOutlineCancel className='w-10 h-10 ' /></button>
-            <span className='font-cardo text-2xl md:text-4xl'>${item.price}</span>
+            <button onClick={() => removeItem(item.id)}><MdOutlineCancel className='w-10 h-10 fill-[#888]' /></button>
+            <span className='font-cardo text-2xl md:text-4xl text-[#292929]'>${item.price}</span>
           </div>
         </div>
       ))}
