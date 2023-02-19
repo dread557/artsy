@@ -159,7 +159,7 @@ const Product = ({ product }) => {
                 </div>
                 <ExtraCollectionSlide />
                 <Link href={'/marketplace'} class="hidden md:flex mt-[30px] md:mt-[100px]  justify-center">
-                    <div class="rounded-xl bg-gradient-to-r from-[#78A3AD] to-[#C056097D] p-1">
+                    <div className="rounded-xl bg-gradient-to-r from-[#78A3AD] to-[#C056097D] p-1">
                         <div class="flex h-full w-full items-center justify-center bg-white back">
                             <button className='rounded-2xl w-[313px] h-[91px] text-[36px]'>Explore all</button>
                         </div>
