@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import Link from 'next/link'
 import { ProductContext } from '../../contexts/ProductsContext'
 import CheckoutNav from '../../components/CheckoutNav'
@@ -7,8 +7,9 @@ import ShippingForm from '../../components/ShippingForm'
 import ItemsCost from '../../components/ItemsCost'
 
 const Shipping = () => {
-    const { cart } = useContext(ProductContext)
-    console.log(cart)
+    const { cart, totalPrice, shippingFee, amount } = useContext(ProductContext)
+    const [email, setEmail] = useState('')
+
     return (
         <div className='pl-[30px] mt-8 md:mt-20 pr-[30px] md:pl-[65px] md:pr-[65px] xl:pl-[120px] xl:pr-[120px]'>
             <span className='flex items-center md:hidden text-[#BCB7B7] font-medium md:text-2xl mb-4'>
@@ -19,13 +20,13 @@ const Shipping = () => {
             </span>
             <CheckoutNav />
             <section className='flex justify-between gap-[105px]'>
-                <ShippingForm />
+                <ShippingForm amount={amount} email={email} setEmail={setEmail} />
                 <div className='hidden md:block'>
                     <CartItems />
                     {cart.length === 0 ? null : (
                         <>
                             <hr className='my-[50px]' />
-                            <ItemsCost />
+                            <ItemsCost amount={amount} totalPrice={totalPrice} shippingFee={shippingFee} />
                         </>
                     )}
                 </div>

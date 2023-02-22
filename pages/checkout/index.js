@@ -9,13 +9,7 @@ import ItemsCost from '../../components/ItemsCost'
 const Cart = () => {
     const { cart } = useContext(ProductContext)
     const router = useRouter()
-    let totalPrice = 0
-    let shippingFee = 0
-    let cost = cart.map((x) => {
-        totalPrice += x.price * x.quantity
-        shippingFee += (0.05 * totalPrice)
-        return x
-    })
+    let amount = 0
     return (
         <div className='pl-[30px] mt-8 md:mt-20 pr-[30px] md:pl-[65px] md:pr-[65px] xl:pl-[120px] xl:pr-[120px]'>
             <span className='flex items-center md:hidden text-[#BCB7B7] font-medium md:text-2xl mb-4'>
@@ -39,7 +33,7 @@ const Cart = () => {
                             </button>
                             <Link className='text-[#006CA2] underline self-center font-medium text-[18px] md:text-[28px]' href='/marketplace'>Continue shopping</Link>
                         </div>
-                        <ItemsCost />
+                        <ItemsCost amount={amount} />
                     </div>
                 </>
             )}

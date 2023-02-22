@@ -19,7 +19,7 @@ import loader from '/public/Loader.png'
 import VerticalSlider from '../components/VerticalSlider'
 import FeaturedProducts from '../components/FeaturedProducts'
 import NewsLetter from '../components/NewsLetter'
-
+import Footer from '../components/Footer'
 
 export default function Home() {
   return (
@@ -101,6 +101,7 @@ export default function Home() {
         </span>
       </section>
       <NewsLetter />
+      <Footer />
     </>
   )
 }

@@ -1,15 +1,52 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 import Input from './Input'
+import { usePaystackPayment } from 'react-paystack';
 
-const ShippingForm = () => {
+const ShippingForm = ({ email, setEmail, amount }) => {
     const router = useRouter()
+    const handleChange = (e) => {
+        setEmail(e.target.value)
+    }
+    const config = {
+        reference: (new Date()).getTime().toString(),
+        email: email,
+        amount: amount * 100, //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
+        publicKey: 'pk_test_1e264ccf4a0a191a9b500481c1ed346f69c49619',
+    };
+    const onSuccess = (reference) => {
+        console.log(reference);
+        router.push('/checkout/success')
+    };
+    const onClose = () => {
+        console.log('closed')
+        // router.push('/checkout/success')
+    }
+    const initializePayment = usePaystackPayment(config)
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log({
+            email,
+            amount
+        });
+
+        initializePayment(onSuccess, onClose)
+    }
+
     return (
-        <form className='flex flex-col w-full lg:w-[50%] gap-[30px] md:gap-[40px] mt-[30px]' id='shippingForm'>
+        <form onSubmit={handleSubmit} className='flex flex-col w-full lg:w-[50%] gap-[30px] md:gap-[40px] mt-[30px]' id='shippingForm'>
             <div>
                 <label className='flex flex-col gap-[15px] md:gap-[17px] text-[#888] text-lg md:text-[26px]'>
                     Your Email
-                    <Input type={'email'} name={'email'} placeholder={'aanuoluwateenah@gmail.com'} />
+                    <input
+                        className='h-[62px] w-full pl-5 md:pl-[51px] text-base rounded-[10px] text-[#747474] bg-[#F2F2F2] border-[.5px] border-[#747474]'
+                        type='email'
+                        name='email'
+                        value={email}
+                        placeholder='aanuoluwateenah@gmail.com'
+                        required
+                        onChange={handleChange}
+                    />
                 </label>
                 <div className='flex gap-[13px] mt-[9px] md:mt-[31px]'>
                     <input className='w-4 h-4 md:w-[26px] md:h-[26px]' type='checkbox' />
@@ -19,15 +56,6 @@ const ShippingForm = () => {
             <label className='flex flex-col gap-[15px] md:gap-[17px] text-[#888] text-lg md:text-[26px]'>
                 Your full name
                 <Input type={'text'} name={'full name'} placeholder={'Anuoluwapo Bamisaye'} />
-            </label>
-            <label className='flex flex-col gap-[15px] md:gap-[17px] text-[#888] text-lg md:text-[26px]'>
-                Choose a wallet
-                <select name='wallets' id='wallets' form='shippingFom' className='h-[62px] w-full px-[30px] rounded-[10px] text-[#747474] bg-[#F2F2F2] border-[.5px] border-[#747474]'>
-                    <option value=''></option>
-                    <option value='Metamask'>Metamask</option>
-                    <option value='Binance'>Binance</option>
-                    <option value='Opensea'>Opensea</option>
-                </select>
             </label>
             <label className='flex flex-col gap-[15px] md:gap-[17px] text-[#888] text-lg md:text-[26px]'>
                 City
@@ -297,6 +325,8 @@ const ShippingForm = () => {
                 Proceed to payment
             </button>
         </form>
+
+
     )
 }
 

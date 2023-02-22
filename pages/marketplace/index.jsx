@@ -7,6 +7,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { artists, categories, products } from '../../data/products'
 import NewsLetter from '../../components/NewsLetter'
+import Footer from '../../components/Footer'
 
 const Marketplace = () => {
     const [searchTerm, setSearchTerm] = useState('')
@@ -163,7 +164,8 @@ const Marketplace = () => {
                 </div>
 
             </div>
-           <NewsLetter />
+            <NewsLetter />
+            <Footer />
         </div>
     )
 }

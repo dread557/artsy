@@ -33,9 +33,17 @@ const ProductContextProvider = (props) => {
     useEffect(() => {
         setProductList(products)
     }, [])
+    let totalPrice = 0
+    let shippingFee = 0
+    cart.map((x) => {
+        totalPrice += x.price * x.quantity
+        shippingFee += (0.05 * totalPrice)
+        return x
+    })
+    let amount = (totalPrice + shippingFee).toFixed(2)
 
     return (
-        <ProductContext.Provider value={{ productList, cart, setCart, toggleFavorite, favorite }}>
+        <ProductContext.Provider value={{ productList, cart, setCart, toggleFavorite, favorite, totalPrice, shippingFee, amount }}>
             {props.children}
         </ProductContext.Provider>
     )

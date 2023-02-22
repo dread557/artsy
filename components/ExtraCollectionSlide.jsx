@@ -12,7 +12,6 @@ const ExtraCollectionSlide = () => {
     const [liked, setLiked] = useState(false)
     const { favorite, toggleFavorite } = useContext(ProductContext)
     const selected = products.filter((item) => item.id >= 10)
-    console.log(selected);
     return (
         <div className='flex justify-between mt-[30px] md:mt-[100px]'>
             <Swiper
