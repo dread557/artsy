@@ -41,7 +41,7 @@ const Marketplace = () => {
     // const filteredData = products.filter(product => selectedValues.includes(product.category))
 
     return (
-        <div className='pl-[30px] mt-8 md:mt-20 pr-[30px] md:pl-[65px] md:pr-[65px] lg:pl-[120px] lg:pr-[120px]'>
+        <section className='pl-[30px] mt-8 md:mt-20 pr-[30px] md:pl-[65px] md:pr-[65px] lg:pl-[120px] lg:pr-[120px] max-w-[1440px] m-auto'>
             <span className='flex items-center md:hidden text-[#BCB7B7] font-medium text-lg mb-4'>
                 <Link href='/'>Home/</Link>
                 <Link href='/marketplace'> Marketplace/ </Link>
@@ -166,7 +166,7 @@ const Marketplace = () => {
             </div>
             <NewsLetter />
             <Footer />
-        </div>
+        </section>
     )
 }
 

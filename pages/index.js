@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 import HeroSlider from '../components/HeroSlider'
-import AuctionSlider from '../components/AuctionSlider'
+import HomeAuctionSlider from '../components/HomeAuctionSlider'
 import { VscArrowRight } from 'react-icons/vsc'
 import { MdArrowForward } from 'react-icons/md'
 
@@ -20,10 +20,13 @@ import VerticalSlider from '../components/VerticalSlider'
 import FeaturedProducts from '../components/FeaturedProducts'
 import NewsLetter from '../components/NewsLetter'
 import Footer from '../components/Footer'
+import { useAuthContext } from '../contexts/AuthContext'
+import SignIn from './SignIn'
 
 export default function Home() {
+
   return (
-    <>
+    <div className='max-w-[1440px] m-auto'>
       <Head>
         <title>Artsy</title>
         <meta name="description" content="A commercial photography website" />
@@ -54,7 +57,7 @@ export default function Home() {
         </section>
         <hr className='bg-[#333333]' />
       </section>
-      <AuctionSlider />
+      <HomeAuctionSlider />
       <div>
         <div className='mt-[100px] md:mt-[190px] border-b h-[.5px] bg-[#333333] '></div>
         <span className='flex items-center justify-between pt-[59px] pb-[59px] pl-[8px] pr-[30px] md:pl-[65px] md:pr-[65px] lg:pl-[120px] lg:pr-[120px]'>
@@ -102,6 +105,6 @@ export default function Home() {
       </section>
       <NewsLetter />
       <Footer />
-    </>
+    </div>
   )
 }

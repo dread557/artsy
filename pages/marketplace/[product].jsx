@@ -67,7 +67,7 @@ const Product = ({ product }) => {
     }
 
     return (
-        <div className="pl-[30px] mt-8 md:mt-20 pr-[30px] md:pl-[65px] md:pr-[65px] xl:pl-[120px] xl:pr-[120px]">
+        <div className="pl-[30px] mt-8 md:mt-20 pr-[30px] md:pl-[65px] md:pr-[65px] xl:pl-[120px] xl:pr-[120px] max-w-[1440px] m-auto">
             <span className='flex items-center  text-[#BCB7B7] font-medium md:text-2xl mb-4'>
                 <Link href='/'>Home/</Link>
                 <Link href='/marketplace'> Marketplace/ </Link>

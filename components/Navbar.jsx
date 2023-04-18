@@ -20,7 +20,7 @@ const Navbar = () => {
                 return (
                     <Link className={
                         isActive ?
-                            'border-b-2 text-[24px] transition ease-out duration-300 border-[#292929] font-medium'
+                            'border-b-2 text-[24px] transition ease-out duration-300 border-[#292929]'
                             : 'border-b-2 border-transparent text-[24px] transition ease-out duration-300 hover:border-b-2 hover:border-[#292929] hover:font-medium'}
                         href={link.link}
                         key={index}

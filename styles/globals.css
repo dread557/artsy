@@ -1,42 +1,51 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
-@import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text:wght@400;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bellefair&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Baskervville&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&display=swap');
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import url("https://fonts.googleapis.com/css2?family=STIX+Two+Text:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bellefair&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baskervville&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&display=swap");
 
-h2, h3, h4,h5, p {
-    color: #333;
+h2,
+h3,
+h4,
+h5,
+p {
+  color: #333;
 }
 
-input:checked + div svg {  
-  @apply block;  
+input:checked + div svg {
+  @apply block;
 }
 
 .swiper-slide {
-    display: flex;
+  display: flex;
 }
 
 @font-face {
-    font-family : 'Satoshi';
-    src: url('/public/fonts/Satoshi-Black.otf');
+  font-family: "Satoshi";
+  src: url("../public/fonts/Satoshi-Regular.ttf");
 }
 
-p {
-    font-family: 'Satoshi', serif;
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Satoshi", serif;
 }
 
 @font-face {
-    font-family : 'Clash Display Variable Bold';
-    src : url('/public/fonts/FontsFree-Net-ClashDisplay-Variable.ttf');
+  font-family: "Clash Display Variable Bold";
+  src: url("../public/fonts/FontsFree-Net-ClashDisplay-Variable.ttf");
 }
 
 @media screen and (max-width: 768px) {
-    .calc {
-        width: calc(100% + 56px);
-        margin-left: -28px;
-    }
+  .calc {
+    width: calc(100% + 56px);
+    margin-left: -28px;
+  }
 }
-

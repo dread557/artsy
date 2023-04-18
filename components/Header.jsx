@@ -14,7 +14,7 @@ const Header = () => {
     const { cart } = useContext(ProductContext)
     const { screenSize, activeMenu, setActiveMenu, mobileMenu, setMobileMenu } = useContext(ScreenContext)
     return (
-        <div className='flex justify-between items-center pt-8 md:pt-[50px] pl-[30px] pr-[30px] md:pl-[65px] md:pr-[65px] lg:pl-[120px] lg:pr-[120px]'>
+        <div className='flex justify-between items-center pt-8 md:pt-[50px] pl-[30px] pr-[30px] md:pl-[65px] md:pr-[65px] lg:pl-[120px] lg:pr-[120px]  max-w-[1440px] m-auto'>
             <span className='text-2xl lg:hidden cursor-pointer' onClick={() => { setActiveMenu(!activeMenu); setMobileMenu(!mobileMenu) }}> <AiOutlineMenu /></span>
             {(mobileMenu && screenSize <= 968) ? (<NavMenu />) : null}
             <Link href='/' className='text-[24px] md:text-[2rem] font-bold leading-[51.5px] md:leading-[90px] font-stix'>ARTSY.</Link>
