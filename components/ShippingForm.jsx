@@ -2,8 +2,11 @@ import React from 'react'
 import { useRouter } from 'next/router'
 import Input from './Input'
 import { usePaystackPayment } from 'react-paystack';
+import { ProductContext } from '../contexts/ProductsContext';
+import { useContext } from 'react';
 
 const ShippingForm = ({ email, setEmail, amount }) => {
+    const { setCart } = useContext(ProductContext)
     const router = useRouter()
     const handleChange = (e) => {
         setEmail(e.target.value)
@@ -17,6 +20,7 @@ const ShippingForm = ({ email, setEmail, amount }) => {
     const onSuccess = (reference) => {
         console.log(reference);
         router.push('/checkout/success')
+        setCart([])
     };
     const onClose = () => {
         console.log('closed')
